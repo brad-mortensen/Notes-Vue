@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import HelloWorld from '@/components/HelloWorld'
+import NavBar from '@/components/NavBar'
 
-describe('HelloWorld.vue', () => {
+describe('NavBar.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(HelloWorld)
+    const Constructor = Vue.extend(NavBar)
     const vm = new Constructor().$mount()
     expect(vm.$el.querySelector('.hello h1').textContent)
       .toEqual('Welcome to Your Vue.js App')
