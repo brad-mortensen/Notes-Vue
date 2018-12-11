@@ -28,5 +28,6 @@ export default {
   justify-content: space-between;
   box-sizing: border-box;
   background-color: lightgrey;
+  
 }
 </style>

@@ -2,11 +2,13 @@
   <div class="notes-container">
     <h2 class='your-notes'>Your Notes:</h2>
     <button class='sort-button'>Sort A-Z</button>
-    <note></note>
+    <note v-for="(note, index) in notes" :key="index" :note="note"></note>    
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import Note from "./Note";
 export default {
   name: "NotesList",
@@ -15,9 +17,18 @@ export default {
   },
   data() {
     return {
-      title: 'Notes List',
-      
+      notes: []
     };
+  },
+  created() {
+    axios
+      .get(`https://lambda-notes-build.herokuapp.com/api/notes/`)
+      .then(res => {
+        this.notes = res.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 };
 </script>
@@ -33,6 +44,10 @@ export default {
   padding-top: 60px;
   padding-bottom: 20px;
   box-sizing: border-box;
+  .holder {
+    width: 100%;
+    border: 1px solid sienna;
+  }
   .your-notes {
     width: 30%;
     padding-left: 3%;
@@ -55,6 +70,10 @@ export default {
       background-color: white;
       color: #00ced1;
     }
+  }
+  .link {
+    color: black;
+    text-decoration: none;
   }
 } 
 </style>
