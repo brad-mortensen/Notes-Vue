@@ -2,11 +2,11 @@
   <form class='form'>
     <h3 class='add-header'>Edit Note:</h3>
     <input 
-      v-model='note.title'
+      v-model="note.title"
       class='title'
       placeholder='Note Title'/>
     <textarea 
-      v-model='note.textBody'
+      v-model="note.textBody"
       class='body'
       placeholder='Note Content'/>
     <button v-on:click='handleSubmit' class='save'>Save</button>
@@ -19,21 +19,25 @@ import axios from 'axios'
     name: 'EditForm',
     data() {
       return {
-        note: {
-          title: '',
-          textBody: ''
-        }
+        note: [{id:null, title:'', textBody:''}]
       }
+    },
+    created(){
+      this.note.id = this.$route.params.id;
+      this.note.title = this.$route.params.title;
+      this.note.textBody = this.$route.params.textBody;
     },
     methods: {
       handleSubmit: function(e) {
+        const id = this.$route.params.id;
         e.preventDefault();        
-        axios.post(`https://lambda-notes-build.herokuapp.com/api/notes/`, {
+        axios.put(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`, {
           title: this.note.title, textBody: this.note.textBody
         }).then(res => {
           console.log(res.status);
           this.note.title = ''
           this.note.textBody = '' 
+          this.$router.push('/notes')
         }).catch(err => {
           console.log('error:', err)
         })

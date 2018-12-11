@@ -1,5 +1,5 @@
 <template>
-  <form class='form'>
+  <form v-on:submit="handleSubmit" class='form'>
     <h3 class='add-header'>Create New Note:</h3>
     <input 
       v-model='note.title'
@@ -34,13 +34,11 @@ import axios from 'axios'
           console.log(res.status);
           this.note.title = ''
           this.note.textBody = '' 
+          this.$router.push('/notes')
         }).catch(err => {
           console.log('error:', err)
         })
       },
-      clearInputs: function() {
-        
-      }
     }
   }
 </script>

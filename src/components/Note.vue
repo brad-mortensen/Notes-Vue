@@ -1,9 +1,10 @@
 
 <template>
-  <div class="note">
+  <router-link exact :to="{name:'singleNote', params:{id: note._id}}" class="note">
     <h2>{{note.title}}</h2>
     <p>{{note.textBody}}</p>
-  </div>
+  </router-link>
+  
 </template>
 
 <script>
@@ -13,9 +14,10 @@ export default {
   props: ['note'],
   data() {
     return {
-      notes: []
     };
   },
+  created(){
+  }
 };
 </script>
 

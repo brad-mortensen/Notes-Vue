@@ -46,7 +46,9 @@ export default {
   box-sizing: border-box;
   .holder {
     width: 100%;
-    border: 1px solid sienna;
+    display: flex;
+    flex-flow: row wrap;
+    text-decoration: none;
   }
   .your-notes {
     width: 30%;
