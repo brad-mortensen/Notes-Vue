@@ -1,15 +1,15 @@
-import Vue from 'Vuvuee';
-import Router from 'vue-router';
-import App from '../App.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import NotesList from '../components/NotesList.vue'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path:'/',
-      name:'App',
-      component: App
+      path: '/notes',
+      name: 'notes',
+      component: NotesList
     }
   ]
 })

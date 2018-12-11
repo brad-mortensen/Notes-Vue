@@ -1,14 +1,14 @@
 <template>
   <div class="nav-bar">
     <h1>Lambda Notes</h1>
-    <a class='nav-links' :to="{ path: 'notes' }">View Notes</a>
-    <a class='nav-links' :to="{ path: 'addnote' }">+ New Note</a>
+    <router-link :to="{ name: 'notes'}" class='nav-links'>View Notes</router-link>
+    <router-link :to="{ name: 'add'}" class='nav-links'>+ New Note</router-link>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'navBar',
+    name: 'NavBar',
     data() {
       return {
       }
@@ -24,7 +24,7 @@
   display: flex;
   flex-flow: column wrap;
   padding: 0px 1%;
-  a {
+  .nav-links {
     background-color: #00ced1;
     width: 30%;
     height: 45px;
