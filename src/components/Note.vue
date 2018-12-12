@@ -11,13 +11,7 @@
 import axios from "axios";
 export default {
   name: "note",
-  props: ['note'],
-  data() {
-    return {
-    };
-  },
-  created(){
-  }
+  props: ['note']
 };
 </script>
 

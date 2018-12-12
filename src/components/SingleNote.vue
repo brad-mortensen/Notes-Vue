@@ -2,22 +2,27 @@
   <div class='single-container'>
     <div class='button-container'> 
       <router-link exact :to="{name:'edit', params:{id: note._id, title: note.title, textBody: note.textBody}}" >Edit</router-link>
-      <router-link to="" exact>Delete</router-link>
+      <a @click="toggleDelete" to="" exact>Delete</a>
     </div> 
     <h2>{{note.title}}</h2>
     <p>{{note.textBody}}</p>
     <router-view></router-view>
+    <deleteModal v-if="deleting" :onClick="toggleDelete" :deleter="handleDelete"></deleteModal>    
   </div>
-  
 </template>
 
 <script>
 import axios from 'axios'
+import DeleteModal from "./DeleteModal";
 export default {
   name: "SingleNote",
+  components:{
+    DeleteModal
+  },
   data() {
     return {
-      note:[]
+      note:[],
+      deleting: false
     };
   },
   created() {
@@ -30,6 +35,19 @@ export default {
       .catch(err => {
         console.log(err);
       });
+  },
+  methods: {
+    toggleDelete: function() {
+      this.deleting = !this.deleting;
+    },
+    handleDelete: function() {
+      const id = this.$route.params.id;
+      axios.delete(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`)
+        .then(res => {
+          console.log(res.status, res.data)
+          this.$router.push('/notes')
+        }).catch(err => console.log('ERROR', err));
+    }
   }
 };
 </script>
