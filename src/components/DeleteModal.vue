@@ -1,6 +1,6 @@
 <template>
   <div class='delete-container'>
-    <div className='delete-modal'>
+    <div class='delete-modal'>
       <p>Are you sure you want to delete this note?</p>
       <button @click='deleter' class='delete'>Delete</button>
       <button @click='onClick' >Cancel</button>
@@ -9,7 +9,7 @@
 </template>
 <script>
   export default {
-    name: 'delete',
+    name: 'Delete',
     props: {
     onClick: Function,
     deleter: Function
@@ -19,16 +19,17 @@
 <style lang="less" scoped>
 
 .delete-container {
-  width: 75%;
-  background-color: whitesmoke;
-  border-left: 1px solid grey;
-  height: 800px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 200px;
-  box-sizing: border-box;
+  align-items: center;
+  background: rgba(4, 0, 0, 0.7);
   .delete-modal {
-    width: 60%;
+    width: 30%;
     height: 150px;
     border: 1px solid grey;
     display: flex;

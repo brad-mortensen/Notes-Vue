@@ -31,12 +31,12 @@ import axios from 'axios'
         axios.post(`https://lambda-notes-build.herokuapp.com/api/notes/`, {
           title: this.note.title, textBody: this.note.textBody
         }).then(res => {
-          console.log(res.status);
+          console.log('Success!', res.status);
           this.note.title = ''
           this.note.textBody = '' 
           this.$router.push('/notes')
         }).catch(err => {
-          console.log('error:', err)
+          console.log('ERROR', err)
         })
       },
     }
@@ -70,10 +70,10 @@ import axios from 'axios'
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
-  }
-  :hover {
-    background-color: white;
-    color: #00ced1;
+    &:hover {
+      background-color: white;
+      color: #00ced1;
+    }
   }
   .title {
     height: 45px;

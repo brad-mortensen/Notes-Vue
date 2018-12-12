@@ -1,8 +1,8 @@
 <template>
   <div class='single-container'>
     <div class='button-container'> 
-      <router-link exact :to="{name:'edit', params:{id: note._id, title: note.title, textBody: note.textBody}}" >Edit</router-link>
-      <a @click="toggleDelete" to="" exact>Delete</a>
+      <router-link exact :to="{name:'edit', params:{id: this.$route.params.id, title: note.title, textBody: note.textBody}}" >Edit</router-link>
+      <a class="delete-button" @click="toggleDelete" to="" exact>Delete</a>
     </div> 
     <h2>{{note.title}}</h2>
     <p>{{note.textBody}}</p>
@@ -44,7 +44,7 @@ export default {
       const id = this.$route.params.id;
       axios.delete(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`)
         .then(res => {
-          console.log(res.status, res.data)
+          console.log('Success!', res.status)
           this.$router.push('/notes')
         }).catch(err => console.log('ERROR', err));
     }
@@ -59,38 +59,39 @@ export default {
   width: 75%;
   height: 800px;
   padding: 20px;
+  .button-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+    margin-right: 20px;
+    font-size: 1rem;
+    text-decoration: underline;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    }
+    p {
+      margin-right: 20px;
+      font-size: 1rem;
+      text-decoration: underline;
+      font-weight: bold;
+      color: black;
+      cursor: pointer;
+    }
+    .single-container h2 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+    .single-container p {
+      font-size: 1rem;
+    }
+  }
 }
 
-.single-container .button-container {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.single-container .button-container a {
-  margin-right: 20px;
-  font-size: 1rem;
-  text-decoration: underline;
-  font-weight: bold;
-  color: black;
-}
-.single-container .button-container p {
-  margin-right: 20px;
-  font-size: 1rem;
-  text-decoration: underline;
-  font-weight: bold;
-  color: black;
-  cursor: pointer;
-}
-.single-container h2 {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-bottom: 35px;
-}
 
-.single-container p {
-  font-size: 1rem;
-}
 
 </style>

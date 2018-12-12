@@ -41,7 +41,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    :hover {
+    &:hover {
       background-color: white;
       color: #00ced1;
     }

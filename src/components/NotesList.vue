@@ -68,7 +68,7 @@ export default {
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
-    :hover {
+    &:hover {
       background-color: white;
       color: #00ced1;
     }
