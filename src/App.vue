@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navBar></navBar>
-    <router-view/>
+    <router-view v-if="loggedIn"/>
   </div>
 </template>
 
@@ -10,6 +10,11 @@ import NavBar from "./components/Navbar";
 import NotesList from "./components/NotesList";
 export default {
   name: "App",
+  data() {
+    return {
+        loggedIn: false
+      }
+  },
   components: {
     NotesList,
     NavBar

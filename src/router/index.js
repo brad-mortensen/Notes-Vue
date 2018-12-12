@@ -9,11 +9,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/notes/', 
-      name: 'notes', 
-      component: NotesList,
-    },
+    {path: '/notes/', name: 'notes', component: NotesList,},
     {path: '/notes/:id', name: 'singleNote', component: SingleNote},
     {path: '/addnote/', name: 'add', component: AddForm},
     {path: '/editnote/:id', name: 'edit', component: EditForm}

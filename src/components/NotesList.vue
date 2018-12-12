@@ -1,7 +1,8 @@
 <template>
   <div class="notes-container">
     <h2 class='your-notes'>Your Notes:</h2>
-    <button class='sort-button'>Sort A-Z</button>
+    <button v-if="sortedAZ===false" @click="sortNotesAZ" class='sort-button'>Sort A-Z</button>
+    <button v-else @click="sortNotesZA" class='sort-button'>Sort Z-A</button>
     <note v-for="(note, index) in notes" :key="index" :note="note"></note>    
     <router-view></router-view>
   </div>
@@ -17,7 +18,9 @@ export default {
   },
   data() {
     return {
-      notes: []
+      notes: [],
+      sortedAZ: false,
+      sortedZA: false
     };
   },
   created() {
@@ -29,7 +32,19 @@ export default {
       .catch(err => {
         console.log(err);
       });
-  }
+  },
+  methods: {
+    sortNotesAZ: function() {
+      this.sortedAZ = true
+      this.sortedZA = false
+      this.notes = this.notes.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
+    },
+    sortNotesZA: function() {
+      this.sortedAZ = false
+      this.sortedZA = true
+      this.notes = this.notes.sort((a,b) => (a.title < b.title) ? 1 : ((b.title < a.title) ? -1 : 0));
+    }
+  },
 };
 </script>
 
