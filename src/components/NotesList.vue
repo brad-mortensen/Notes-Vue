@@ -53,10 +53,10 @@ export default {
   border-left: 1px solid grey;
   display: flex;
   flex-flow: row wrap;
-  width: 75%;
+  width: 100%;
   /* justify-content: space-evenly; */
   background-color: whitesmoke;
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 20px;
   box-sizing: border-box;
   .holder {

@@ -1,6 +1,6 @@
 
 <template>
-  <router-link exact :to="{name:'singleNote', params:{id: note._id}}" class="note">
+  <router-link exact :to="{name:'singleNote', params:{id: note.id}}" class="note">
     <h2>{{note.title}}</h2>
     <p>{{note.textBody}}</p>
   </router-link>
