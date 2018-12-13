@@ -7,6 +7,7 @@
         <a @click="toggleRegistering" v-if="loggedIn===false">Register</a>
         <a @click="handleLogout" v-if="loggedIn">Logout</a>
       </div>
+      <div v-if="loggedIn===false" class="shame-container"></div>
       <login-modal :toggleLogging="toggleLogging" v-if="loggingIn"></login-modal>
       <registerModal :toggleRegistering="toggleRegistering" v-if="registering"></registerModal>
       <router-view v-if="loggedIn"/>
@@ -106,6 +107,11 @@ export default {
           color: white;
         }
       }    
+    }
+    .shame-container {
+      height: 900px;
+      background-color: whitesmoke;
+      border-left: 1px solid grey;
     }
   }
 }

@@ -1,16 +1,16 @@
+
 <template>
   <div class='register-container'>
     <div class='register-modal'>
       <h3>Register</h3>
-      <label>Username: </label>
-      <input v-model="username" name="username"/>
-      <label>Password: </label>
-      <input v-model="password" name="password" type="password"/>
+      <input v-model="username" name="username" placeholder="username..."/>
+      <input v-model="password" name="password" type="password" placeholder="password..."/>
       <button @click="register" class='register'>register</button>
       <button @click="toggleRegistering">Cancel</button>
     </div>
   </div>
 </template>
+
 <script>
   import axios from 'axios';
   export default {
@@ -18,8 +18,7 @@
     props: {
     toggleRegistering: Function
     },
-    data() {
-      props: 
+    data() { 
       return {
         username: '',
         password: ''
@@ -33,6 +32,7 @@
           console.log('Success!', res.status);
           this.username = ''
           this.password = '' 
+          this.toggleRegistering();
           this.$router.push('/')
         }).catch(err => {
           console.log('ERROR', err)
@@ -41,6 +41,7 @@
     }
   }
 </script>
+
 <style lang="less" scoped>
 
 .register-container {
@@ -55,32 +56,37 @@
   background: rgba(4, 0, 0, 0.7);
   .register-modal {
     width: 60%;
-    height: 150px;
+    height: 200px;
     border: 1px solid grey;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     background-color: white;
-  }
-  .register-modal p {
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  .register-modal button {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #00ced1;
-    width: 30%;
-    height: 45px;
-    margin-top: 0;
-    border: 1px solid grey;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-  }.register-modal .register {
-    background-color: red;
-  }
+    h3{
+      width: 100%;
+      height: 10px;
+      text-align: center;
+      padding: 0;
+    }
+    input {
+      width: 40%;
+      height: 25px;
+    }
+    button {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: red;
+      width: 25%;
+      height: 30px;
+      margin-top: 0;
+      border: 1px solid grey;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .register {
+      background-color: #00ced1;
+    }
+  }  
 }
 </style>

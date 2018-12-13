@@ -48,9 +48,10 @@ import axios from 'axios'
 
 <style lang="less" scoped>
 .form {
+  box-sizing:border-box;
   background-color: whitesmoke;
   border-left: 1px solid grey;
-  width: 75%;
+  width: 100%;
   height: auto;
   display:flex;
   flex-flow: row wrap;

@@ -54,9 +54,10 @@ export default {
 
 <style lang="less" scoped>
 .single-container {
+  box-sizing: border-box;
   background-color: whitesmoke;
   border-left:1px solid grey;
-  width: 75%;
+  width: 100%;
   height: 800px;
   padding: 20px;
   .button-container {
