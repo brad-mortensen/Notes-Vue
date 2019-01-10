@@ -1,0 +1,4 @@
+[build]
+base = "Lambda-Notes-Vue/"
+publish = "Lambda-Notes-Vue/build/"
+command = "yarn build"
