@@ -1,4 +1,4 @@
 [build]
-base = "Lambda-Notes-Vue/"
-publish = "Lambda-Notes-Vue/build/"
+base = "MyApp/"
+publish = "MyApp/build/"
 command = "yarn build"
