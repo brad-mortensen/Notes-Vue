@@ -1,9 +1,9 @@
 <template>
   <div class="notes-container">
-    <h2 class='your-notes'>Your Notes:</h2>
-    <button v-if="sortedAZ===false" @click="sortNotesAZ" class='sort-button'>Sort A-Z</button>
-    <button v-else @click="sortNotesZA" class='sort-button'>Sort Z-A</button>
-    <note v-for="(note) in notes" :key="note.id" :note="note"></note>    
+    <h2 class="your-notes">Your Notes:</h2>
+    <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
+    <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
+    <note v-for="(note) in notes" :key="note.id" :note="note"></note>
     <router-view></router-view>
   </div>
 </template>
@@ -13,7 +13,7 @@ import axios from "axios";
 import Note from "./Note";
 export default {
   name: "NotesList",
-  components:{
+  components: {
     Note
   },
   data() {
@@ -30,26 +30,30 @@ export default {
         this.notes = res.data;
       })
       .catch(err => {
-        console.log(err);
+        console.log("error", err);
       });
   },
   methods: {
     sortNotesAZ: function() {
-      this.sortedAZ = true
-      this.sortedZA = false
-      this.notes = this.notes.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
+      this.sortedAZ = true;
+      this.sortedZA = false;
+      this.notes = this.notes.sort((a, b) =>
+        a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+      );
     },
     sortNotesZA: function() {
-      this.sortedAZ = false
-      this.sortedZA = true
-      this.notes = this.notes.sort((a,b) => (a.title < b.title) ? 1 : ((b.title < a.title) ? -1 : 0));
+      this.sortedAZ = false;
+      this.sortedZA = true;
+      this.notes = this.notes.sort((a, b) =>
+        a.title < b.title ? 1 : b.title < a.title ? -1 : 0
+      );
     }
-  },
+  }
 };
 </script>
 
 <style lang="less" scoped>
-  .notes-container {
+.notes-container {
   border-left: 1px solid grey;
   display: flex;
   flex-flow: row wrap;
@@ -73,7 +77,7 @@ export default {
     font-size: 1.4rem;
   }
   .sort-button {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     background-color: #00ced1;
     width: 15%;
     height: 30px;
@@ -92,5 +96,5 @@ export default {
     color: black;
     text-decoration: none;
   }
-} 
+}
 </style>
