@@ -33,7 +33,7 @@ export default {
         this.note = res.data;
       })
       .catch(err => {
-        console.log(err);
+        console.log("error", err);
       });
   },
   methods: {
