@@ -35,7 +35,7 @@
           this.toggleRegistering();
           this.$router.push('/')
         }).catch(err => {
-          console.log('ERROR', err)
+          console.log('Unable to register', err)
         })
       }
     }
