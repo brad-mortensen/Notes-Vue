@@ -33,7 +33,7 @@ export default {
         this.note = res.data;
       })
       .catch(err => {
-        console.log("error", err);
+        console.log("Note with that ID not found", err);
       });
   },
   methods: {
@@ -46,7 +46,7 @@ export default {
         .then(res => {
           console.log('Success!', res.status)
           this.$router.push('/notes')
-        }).catch(err => console.log('ERROR', err));
+        }).catch(err => console.log('Cant delete note with that ID', err));
     }
   }
 };
