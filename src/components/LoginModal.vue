@@ -34,7 +34,7 @@
           this.toggleLogging()
           this.$router.push('/notes')
       }).catch(err => {
-          console.log('ERROR', err)
+          console.log('Unable to login', err)
       })
     }
   }
