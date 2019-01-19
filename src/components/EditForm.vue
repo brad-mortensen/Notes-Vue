@@ -39,7 +39,7 @@ import axios from 'axios'
           this.note.textBody = '' 
           this.$router.push('/notes')
         }).catch(err => {
-          console.log('ERROR', err)
+          console.log('Unable to edit note', err)
         })
       }
     }
