@@ -1,59 +1,57 @@
 <template>
-  <form class='form'>
-    <h3 class='add-header'>Edit Note:</h3>
-    <input 
-      v-model="note.title"
-      class='title'
-      placeholder='Note Title'/>
-    <textarea 
-      v-model="note.textBody"
-      class='body'
-      placeholder='Note Content'/>
-    <button v-on:click='handleSubmit' class='save'>Save</button>
-  </form> 
+  <form class="form">
+    <h3 class="add-header">Edit Note:</h3>
+    <input v-model="note.title" class="title" placeholder="Note Title">
+    <textarea v-model="note.textBody" class="body" placeholder="Note Content"/>
+    <button v-on:click="handleSubmit" class="save">Save</button>
+  </form>
 </template>
 
 <script>
-import axios from 'axios'
-  export default {
-    name: 'EditForm',
-    data() {
-      return {
-        note: [{id:null, title:'', textBody:''}]
-      }
-    },
-    created(){
-      this.note.id = this.$route.params.id;
-      this.note.title = this.$route.params.title;
-      this.note.textBody = this.$route.params.textBody;
-    },
-    methods: {
-      handleSubmit: function(e) {
-        const id = this.$route.params.id;
-        e.preventDefault();        
-        axios.put(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`, {
-          title: this.note.title, textBody: this.note.textBody
-        }).then(res => {
-          console.log('Success!', res.status);
-          this.note.title = ''
-          this.note.textBody = '' 
-          this.$router.push('/notes')
-        }).catch(err => {
-          console.log('Unable to edit note', err)
+import axios from "axios";
+export default {
+  name: "EditForm",
+  data() {
+    return {
+      note: [{ id: null, title: "", textBody: "" }]
+    };
+  },
+  created() {
+    this.note.id = this.$route.params.id;
+    this.note.title = this.$route.params.title;
+    this.note.textBody = this.$route.params.textBody;
+  },
+  methods: {
+    handleSubmit: function(e) {
+      const id = this.$route.params.id;
+      e.preventDefault();
+      axios
+        .put(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`, {
+          title: this.note.title,
+          textBody: this.note.textBody
         })
-      }
+        .then(res => {
+          console.log("Success!", res.status);
+          this.note.title = "";
+          this.note.textBody = "";
+          this.$router.push("/notes");
+        })
+        .catch(err => {
+          console.log("Unable to edit note", err);
+        });
     }
   }
+};
 </script>
 
 <style lang="less" scoped>
 .form {
-  box-sizing:border-box;
+  box-sizing: border-box;
   background-color: whitesmoke;
   border-left: 1px solid grey;
   width: 100%;
   height: auto;
-  display:flex;
+  display: flex;
   flex-flow: row wrap;
   padding: 60px 4% 200px 2%;
   h3 {
@@ -64,7 +62,7 @@ import axios from 'axios'
     margin-bottom: 40px;
   }
   .save {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     background-color: #00ced1;
     width: 30%;
     height: 45px;
