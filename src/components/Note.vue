@@ -21,7 +21,7 @@ export default {
   width: 30%;
   height: 200px;
   margin-top: 20px;
-  background-color: white;
+  background-color: #F7F581;
   overflow: hidden;
   padding: 10px 0;
   text-decoration: none;

@@ -80,15 +80,15 @@ export default {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: lightgrey;   
+  background-color: black;   
   .components {
     width: 100%;
-    height:auto;
+    height:auto;    
     .buttons {
       padding: 10px;
       display: flex;
       justify-content: flex-end;
-      background-color: whitesmoke;
+      background-color: darkslategray;
       border-left: 1px solid grey;
       a{        
         height: auto;
@@ -110,7 +110,7 @@ export default {
     }
     .shame-container {
       height: 900px;
-      background-color: whitesmoke;
+      background-color: #35EDAC;
       border-left: 1px solid grey;
     }
   }
