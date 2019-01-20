@@ -1,49 +1,52 @@
 
 <template>
-  <div class='register-container'>
-    <div class='register-modal'>
+  <div class="register-container">
+    <div class="register-modal">
       <h3>Register</h3>
-      <input v-model="username" name="username" placeholder="username..."/>
-      <input v-model="password" name="password" type="password" placeholder="password..."/>
-      <button @click="register" class='register'>register</button>
+      <input v-model="username" name="username" placeholder="username...">
+      <input v-model="password" name="password" type="password" placeholder="password...">
+      <button @click="register" class="register">register</button>
       <button @click="toggleRegistering">Cancel</button>
     </div>
   </div>
 </template>
 
 <script>
-  import axios from 'axios';
-  export default {
-    name: 'Register',
-    props: {
+import axios from "axios";
+export default {
+  name: "Register",
+  props: {
     toggleRegistering: Function
-    },
-    data() { 
-      return {
-        username: '',
-        password: ''
-      }
-    },
-    methods: {
-      register: function() {
-        axios.post(`https://lambda-notes-build.herokuapp.com/api/register/`, {
-          username: this.username, password: this.password
-        }).then(res => {
-          console.log('Success!', res.status);
-          this.username = ''
-          this.password = '' 
-          this.toggleRegistering();
-          this.$router.push('/')
-        }).catch(err => {
-          console.log('Unable to register', err)
+  },
+  data() {
+    return {
+      username: "",
+      password: ""
+    };
+  },
+  methods: {
+    register: function() {
+      axios
+        .post(`https://lambda-notes-build.herokuapp.com/api/register/`, {
+          username: this.username,
+          password: this.password
         })
-      }
+        .then(res => {
+          console.log("Success!", res.status);
+          this.username = "";
+          this.password = "";
+          this.toggleRegistering();
+          this.$router.push("/");
+        })
+        .catch(err => {
+          console.log("Unable to register", err);
+        });
     }
   }
+};
 </script>
 
 <style lang="less" scoped>
-
 .register-container {
   position: fixed;
   top: 0;
@@ -62,7 +65,7 @@
     flex-flow: row wrap;
     justify-content: space-around;
     background-color: white;
-    h3{
+    h3 {
       width: 100%;
       height: 10px;
       text-align: center;
@@ -73,7 +76,7 @@
       height: 25px;
     }
     button {
-      font-family: 'Courier New', Courier, monospace;
+      font-family: "Courier New", Courier, monospace;
       background-color: red;
       width: 25%;
       height: 30px;
@@ -87,6 +90,6 @@
     .register {
       background-color: #00ced1;
     }
-  }  
+  }
 }
 </style>
