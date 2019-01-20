@@ -1,27 +1,30 @@
 <template>
-  <div class='single-container'>
-    <div class='button-container'> 
-      <router-link exact :to="{name:'edit', params:{id: this.$route.params.id, title: note.title, textBody: note.textBody}}" >Edit</router-link>
-      <a class="delete-button" @click="toggleDelete" to="" exact>Delete</a>
-    </div> 
+  <div class="single-container">
+    <div class="button-container">
+      <router-link
+        exact
+        :to="{name:'edit', params:{id: this.$route.params.id, title: note.title, textBody: note.textBody}}"
+      >Edit</router-link>
+      <a class="delete-button" @click="toggleDelete" to exact>Delete</a>
+    </div>
     <h2>{{note.title}}</h2>
     <p>{{note.textBody}}</p>
     <router-view></router-view>
-    <deleteModal v-if="deleting" :onClick="toggleDelete" :deleter="handleDelete"></deleteModal>    
+    <deleteModal v-if="deleting" :onClick="toggleDelete" :deleter="handleDelete"></deleteModal>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 import DeleteModal from "./DeleteModal";
 export default {
   name: "SingleNote",
-  components:{
+  components: {
     DeleteModal
   },
   data() {
     return {
-      note:[],
+      note: [],
       deleting: false
     };
   },
@@ -42,11 +45,13 @@ export default {
     },
     handleDelete: function() {
       const id = this.$route.params.id;
-      axios.delete(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`)
+      axios
+        .delete(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`)
         .then(res => {
-          console.log('Success!', res.status)
-          this.$router.push('/notes')
-        }).catch(err => console.log('Cant delete note with that ID', err));
+          console.log("Success!", res.status);
+          this.$router.push("/notes");
+        })
+        .catch(err => console.log("Cant delete note with that ID", err));
     }
   }
 };
@@ -56,7 +61,7 @@ export default {
 .single-container {
   box-sizing: border-box;
   background-color: whitesmoke;
-  border-left:1px solid grey;
+  border-left: 1px solid grey;
   width: 100%;
   height: 800px;
   padding: 20px;
@@ -67,12 +72,12 @@ export default {
     justify-content: flex-end;
     align-items: center;
     a {
-    margin-right: 20px;
-    font-size: 1rem;
-    text-decoration: underline;
-    font-weight: bold;
-    color: black;
-    cursor: pointer;
+      margin-right: 20px;
+      font-size: 1rem;
+      text-decoration: underline;
+      font-weight: bold;
+      color: black;
+      cursor: pointer;
     }
     p {
       margin-right: 20px;
@@ -92,7 +97,4 @@ export default {
     }
   }
 }
-
-
-
 </style>
