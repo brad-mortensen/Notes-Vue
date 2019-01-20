@@ -4,19 +4,17 @@
     <h2>{{note.title}}</h2>
     <p>{{note.textBody}}</p>
   </router-link>
-  
 </template>
 
 <script>
 import axios from "axios";
 export default {
   name: "note",
-  props: ['note']
+  props: ["note"]
 };
 </script>
 
 <style lang="less" scoped>
-
 .note {
   color: black;
   border: 1px solid grey;

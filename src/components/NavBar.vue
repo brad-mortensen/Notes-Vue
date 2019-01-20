@@ -1,23 +1,22 @@
 <template>
   <div class="nav-bar">
     <h1>Lambda Notes</h1>
-    <router-link :to="{ name: 'notes'}" class='nav-links'>View Notes</router-link>
-    <router-link :to="{ name: 'add'}" class='nav-links'>+ New Note</router-link>
+    <router-link :to="{ name: 'notes'}" class="nav-links">View Notes</router-link>
+    <router-link :to="{ name: 'add'}" class="nav-links">+ New Note</router-link>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'NavBar',
-    data() {
-      return {
-      }
-    }
+export default {
+  name: "NavBar",
+  data() {
+    return {};
   }
+};
 </script>
 
 <style lang="less" scoped>
-  .nav-bar {
+.nav-bar {
   box-sizing: border-box;
   width: 25%;
   height: 100%;
@@ -32,7 +31,7 @@
     margin-bottom: 20px;
     border: 1px solid grey;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 1.2rem;
     font-weight: bold;
     width: 98%;
@@ -46,7 +45,7 @@
       color: #00ced1;
     }
   }
-  h1{
+  h1 {
     font-size: 2.4rem;
     font-weight: bold;
     width: 60%;

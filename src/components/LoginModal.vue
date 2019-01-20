@@ -1,47 +1,50 @@
 <template>
-  <div class='login-container'>
-    <div class='login-modal'>
+  <div class="login-container">
+    <div class="login-modal">
       <h3>Login</h3>
-      <input v-model="username" name="username" placeholder="username..."/>
-      <input v-model="password" name="password" type="password" placeholder="password..."/>
-      <button @click="login" class='login'>Login</button>
-      <button @click="toggleLogging" >Cancel</button>
+      <input v-model="username" name="username" placeholder="username...">
+      <input v-model="password" name="password" type="password" placeholder="password...">
+      <button @click="login" class="login">Login</button>
+      <button @click="toggleLogging">Cancel</button>
     </div>
   </div>
 </template>
 <script>
-  import axios from 'axios';
-  export default {
-    name: 'Login',
-    props: {
+import axios from "axios";
+export default {
+  name: "Login",
+  props: {
     toggleLogging: Function
-    },
-    data() {
-      return {
-        username: '',
-        password: ''
-      }
-    },
-    methods: {
+  },
+  data() {
+    return {
+      username: "",
+      password: ""
+    };
+  },
+  methods: {
     login: function() {
-      axios.post(`https://lambda-notes-build.herokuapp.com/api/login/`, {
-          username: this.username, password: this.password
-        }).then(res => {
-          console.log('Success!', res.status);
-          localStorage.setItem('BANK CODE', res.data);
-          this.username = ''
-          this.password = '' 
-          this.toggleLogging()
-          this.$router.push('/notes')
-      }).catch(err => {
-          console.log('Unable to login', err)
-      })
+      axios
+        .post(`https://lambda-notes-build.herokuapp.com/api/login/`, {
+          username: this.username,
+          password: this.password
+        })
+        .then(res => {
+          console.log("Success!", res.status);
+          localStorage.setItem("BANK CODE", res.data);
+          this.username = "";
+          this.password = "";
+          this.toggleLogging();
+          this.$router.push("/notes");
+        })
+        .catch(err => {
+          console.log("Unable to login", err);
+        });
     }
   }
-  }
+};
 </script>
 <style lang="less" scoped>
-
 .login-container {
   position: fixed;
   top: 0;
@@ -60,7 +63,7 @@
     flex-flow: row wrap;
     justify-content: space-around;
     background-color: white;
-    h3{
+    h3 {
       width: 100%;
       height: 10px;
       text-align: center;
@@ -72,7 +75,7 @@
       height: 25px;
     }
     button {
-      font-family: 'Courier New', Courier, monospace;
+      font-family: "Courier New", Courier, monospace;
       background-color: red;
       width: 25%;
       height: 30px;
@@ -86,6 +89,6 @@
     .login {
       background-color: #00ced1;
     }
-  }  
+  }
 }
 </style>

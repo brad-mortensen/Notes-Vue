@@ -1,23 +1,22 @@
 <template>
-  <div class='delete-container'>
-    <div class='delete-modal'>
+  <div class="delete-container">
+    <div class="delete-modal">
       <p>Are you sure you want to delete this note?</p>
-      <button @click='deleter' class='delete'>Delete</button>
-      <button @click='onClick' >Cancel</button>
+      <button @click="deleter" class="delete">Delete</button>
+      <button @click="onClick">Cancel</button>
     </div>
   </div>
 </template>
 <script>
-  export default {
-    name: 'Delete',
-    props: {
+export default {
+  name: "Delete",
+  props: {
     onClick: Function,
     deleter: Function
-    }
   }
+};
 </script>
 <style lang="less" scoped>
-
 .delete-container {
   position: fixed;
   top: 0;
@@ -44,7 +43,7 @@
     font-weight: bold;
   }
   .delete-modal button {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     background-color: #00ced1;
     width: 30%;
     height: 45px;
@@ -54,7 +53,8 @@
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-  }.delete-modal .delete {
+  }
+  .delete-modal .delete {
     background-color: red;
   }
 }
