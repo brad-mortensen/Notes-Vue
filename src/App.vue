@@ -89,7 +89,7 @@ export default {
       display: flex;
       justify-content: flex-end;
       background-color: darkslategray;
-      border-left: 1px solid grey;
+      border-left: 1px solid black;
       a{        
         height: auto;
         padding: 3px;
