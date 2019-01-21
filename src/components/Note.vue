@@ -33,7 +33,7 @@ export default {
     color: black;
     font-size: 1.2rem;
     font-weight: bold;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid black;
     width: 90%;
     margin-left: 5%;
     padding-bottom: 5px;
