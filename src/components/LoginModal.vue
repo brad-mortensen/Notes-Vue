@@ -5,7 +5,7 @@
       <input v-model="username" name="username" placeholder="username...">
       <input v-model="password" name="password" type="password" placeholder="password...">
       <button @click="login" class="login">Login</button>
-      <button @click="toggleLogging">Cancel</button>
+      <button @click="toggleLogin">Cancel</button>
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ import axios from "axios";
 export default {
   name: "Login",
   props: {
-    toggleLogging: Function
+    toggleLogin: Function
   },
   data() {
     return {
@@ -34,7 +34,7 @@ export default {
           localStorage.setItem("BANK CODE", res.data);
           this.username = "";
           this.password = "";
-          this.toggleLogging();
+          this.toggleLogin();
           this.$router.push("/notes");
         })
         .catch(err => {
