@@ -1,14 +1,14 @@
 <template>
   <div class="app" id="app">
-    <NavBar />
+    <NavBar/>
     <div class="components">
       <div class="buttons">
-        <a @click="toggleLogging" v-if="loggedIn===false">Login</a>
+        <a @click="toggleLogin" v-if="loggedIn===false">Login</a>
         <a @click="toggleRegistering" v-if="loggedIn===false">Register</a>
         <a @click="handleLogout" v-if="loggedIn">Logout</a>
       </div>
       <div v-if="loggedIn===false" class="shame-container"></div>
-      <login-modal :toggleLogging="toggleLogging" v-if="loggingIn"></login-modal>
+      <login-modal :toggleLogin="toggleLogin" v-if="loggingIn"></login-modal>
       <registerModal :toggleRegistering="toggleRegistering" v-if="registering"></registerModal>
       <router-view v-if="loggedIn"/>
     </div>
@@ -24,12 +24,12 @@ export default {
   name: "App",
   data() {
     return {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       loggedIn: false,
       loggingIn: false,
       registering: false
-    }
+    };
   },
   components: {
     NotesList,
@@ -38,39 +38,38 @@ export default {
     RegisterModal
   },
   created() {
-    const token = localStorage.getItem('BANK CODE');
-    if(token){
+    const token = localStorage.getItem("BANK CODE");
+    if (token) {
       this.loggedIn = true;
-    }else {
+    } else {
       this.loggedIn = false;
     }
   },
   updated() {
-    const token = localStorage.getItem('BANK CODE');
-    if(token){
+    const token = localStorage.getItem("BANK CODE");
+    if (token) {
       this.loggedIn = true;
-    }else {
+    } else {
       this.loggedIn = false;
     }
   },
   methods: {
     toggleRegistering: function() {
-      this.registering = !this.registering
+      this.registering = !this.registering;
     },
-    toggleLogging: function() {
-      this.loggingIn = !this.loggingIn
+    toggleLogin: function() {
+      this.loggingIn = !this.loggingIn;
     },
     handleLogout: function() {
-      localStorage.removeItem('BANK CODE');
+      localStorage.removeItem("BANK CODE");
       this.loggedIn = false;
-      this.$router.push('/')
+      this.$router.push("/");
     }
   }
 };
 </script>
 
 <style lang="less">
-
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   max-width: 1200px;
@@ -80,22 +79,22 @@ export default {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: black;   
+  background-color: black;
   .components {
     width: 100%;
-    height:auto;    
+    height: auto;
     .buttons {
       padding: 10px;
       display: flex;
       justify-content: flex-end;
       background-color: darkslategray;
       border-left: 1px solid black;
-      a{        
+      a {
         height: auto;
         padding: 3px;
         margin-left: 10px;
         color: black;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: "Courier New", Courier, monospace;
         font-size: 1rem;
         font-weight: bold;
         width: 12%;
@@ -106,11 +105,11 @@ export default {
         &:hover {
           color: white;
         }
-      }    
+      }
     }
     .shame-container {
       height: 900px;
-      background-color: #35EDAC;
+      background-color: #35edac;
       border-left: 1px solid grey;
     }
   }
