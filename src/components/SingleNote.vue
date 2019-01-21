@@ -61,7 +61,7 @@ export default {
 .single-container {
   box-sizing: border-box;
   background-color: #35EDAC;;
-  border-left: 1px solid grey;
+  border-left: 1px solid black;
   width: 100%;
   height: 800px;
   padding: 20px;
