@@ -38,7 +38,7 @@ export default {
     RegisterModal
   },
   beforeCreate() {
-    localStorage.removeItem("BAN");
+    localStorage.removeItem("BANK CODE");
   },
   created() {
     const token = localStorage.getItem("BANK CODE");
