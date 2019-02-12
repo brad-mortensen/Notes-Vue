@@ -31,7 +31,7 @@ export default {
         })
         .then(res => {
           console.log("Success!", res.status);
-          localStorage.setItem("BANK CODE", res.data);
+          localStorage.setItem("USER_DATA", res.data);
           this.username = "";
           this.password = "";
           this.toggleLogin();
