@@ -31,7 +31,7 @@ export default {
           textBody: this.note.textBody
         })
         .then(res => {
-          console.log("Successfully updated note!", res.status);
+          console.log(res.status);
           this.note.title = "";
           this.note.textBody = "";
           this.$router.push("/notes");
