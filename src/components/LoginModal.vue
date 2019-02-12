@@ -38,7 +38,7 @@ export default {
           this.$router.push("/notes");
         })
         .catch(err => {
-          console.log("Login Error", err);
+          console.log(err);
         });
     }
   }
