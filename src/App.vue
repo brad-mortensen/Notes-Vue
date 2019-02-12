@@ -38,10 +38,10 @@ export default {
     RegisterModal
   },
   beforeCreate() {
-    localStorage.removeItem("BANK CODE");
+    localStorage.removeItem("USER_DATA");
   },
   created() {
-    const token = localStorage.getItem("BANK CODE");
+    const token = localStorage.getItem("USER_DATA");
     if (token) {
       this.loggedIn = true;
     } else {
@@ -49,7 +49,7 @@ export default {
     }
   },
   updated() {
-    const token = localStorage.getItem("BANK CODE");
+    const token = localStorage.getItem("USER_DATA");
     if (token) {
       this.loggedIn = true;
     } else {
@@ -64,7 +64,7 @@ export default {
       this.loggingIn = !this.loggingIn;
     },
     handleLogout: function() {
-      localStorage.removeItem("BANK CODE");
+      localStorage.removeItem("USER_DATA");
       this.loggedIn = false;
       this.$router.push("/");
     }
