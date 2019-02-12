@@ -28,13 +28,13 @@ export default {
           textBody: this.note.textBody
         })
         .then(res => {
-          console.log("Success!", res.status);
+          console.log(res.status);
           this.note.title = "";
           this.note.textBody = "";
           this.$router.push("/notes");
         })
         .catch(err => {
-          console.log("ERROR", err);
+          console.log(err);
         });
     }
   }
