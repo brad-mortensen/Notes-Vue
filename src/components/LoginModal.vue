@@ -30,7 +30,7 @@ export default {
           password: this.password
         })
         .then(res => {
-          console.log("Success!", res.status);
+          console.log(res.status);
           localStorage.setItem("USER_DATA", res.data);
           this.username = "";
           this.password = "";
