@@ -32,7 +32,7 @@ export default {
           password: this.password
         })
         .then(res => {
-          console.log("Success!", res.status);
+          console.log(res.status);
           this.username = "";
           this.password = "";
           this.toggleRegistering();
