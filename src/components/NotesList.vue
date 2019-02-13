@@ -30,7 +30,7 @@ export default {
         this.notes = res.data;
       })
       .catch(err => {
-        console.log("Error Retrieving Notes", err);
+        console.log(err);
       });
   },
   methods: {
