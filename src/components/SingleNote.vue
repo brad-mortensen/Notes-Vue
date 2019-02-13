@@ -36,7 +36,7 @@ export default {
         this.note = res.data;
       })
       .catch(err => {
-        console.log("Note with that ID not found", err);
+        console.log(err);
       });
   },
   methods: {
