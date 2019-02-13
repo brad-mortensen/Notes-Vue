@@ -39,7 +39,7 @@ export default {
           this.$router.push("/");
         })
         .catch(err => {
-          console.log("Unable to register", err);
+          console.log(err);
         });
     }
   }
