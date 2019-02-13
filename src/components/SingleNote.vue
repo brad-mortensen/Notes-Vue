@@ -48,7 +48,7 @@ export default {
       axios
         .delete(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`)
         .then(res => {
-          console.log("Success!", res.status);
+          console.log(res.status);
           this.$router.push("/notes");
         })
         .catch(err => console.log("Cant delete note with that ID", err));
