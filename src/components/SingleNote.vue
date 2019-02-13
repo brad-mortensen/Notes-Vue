@@ -51,7 +51,7 @@ export default {
           console.log(res.status);
           this.$router.push("/notes");
         })
-        .catch(err => console.log("Cant delete note with that ID", err));
+        .catch(err => console.log(err));
     }
   }
 };
