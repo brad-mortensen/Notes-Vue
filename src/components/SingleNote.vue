@@ -63,7 +63,7 @@ export default {
   background-color: lightseagreen;
   border-left: 1px solid darkgoldenrod;
   width: 100%;
-  height: 800px;
+  height: 750px;
   padding: 20px;
   .button-container {
     width: 100%;
