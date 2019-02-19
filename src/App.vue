@@ -48,7 +48,7 @@ export default {
       this.loggedIn = false;
     }
   },
-  updated() {
+  beforeUpdate() {
     const token = localStorage.getItem("USER_DATA");
     if (token) {
       this.loggedIn = true;
