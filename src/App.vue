@@ -42,11 +42,7 @@ export default {
   },
   created() {
     const token = localStorage.getItem("USER_DATA");
-    if (token) {
-      this.loggedIn = true;
-    } else {
-      this.loggedIn = false;
-    }
+    token?this.loggedIn = true:this.loggedIn = false;
   },
   beforeUpdate() {
     const token = localStorage.getItem("USER_DATA");
