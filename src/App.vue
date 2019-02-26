@@ -42,12 +42,11 @@ export default {
   },
   created() {
     const token = localStorage.getItem("USER_DATA");
-    token?this.loggedIn = true:this.loggedIn = false;
+    token ? (this.loggedIn = true) : (this.loggedIn = false);
   },
   beforeUpdate() {
     const token = localStorage.getItem("USER_DATA");
-    token?this.loggedIn = true:this.loggedIn = false;
-
+    token ? (this.loggedIn = true) : (this.loggedIn = false);
   },
   methods: {
     toggleRegistering: function() {
