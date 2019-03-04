@@ -59,7 +59,7 @@ export default {
   flex-flow: row wrap;
   width: 100%;
   /* justify-content: space-evenly; */
-  background-color:darkslategrey;
+  background-color: darkslategrey;
   padding-top: 20px;
   padding-bottom: 20px;
   box-sizing: border-box;
