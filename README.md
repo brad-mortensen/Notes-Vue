@@ -1,3 +1,3 @@
 # Lambda Notes Vue - 2.0
 
-a vue project
+A Vue.js Project
