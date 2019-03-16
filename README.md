@@ -1,5 +1,5 @@
 # Lambda Notes Vue - 2.0
 
-Built with Vue. 
+Built with Vue.js
 
-© Brad Mortensen
+© Brad Mortensen 2019
