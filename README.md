@@ -3,10 +3,3 @@
 Built with Vue.js
 
 
-
-
-
-
-
-
-© Brad Mortensen 2019
