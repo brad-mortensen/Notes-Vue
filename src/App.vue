@@ -76,7 +76,7 @@ export default {
   box-sizing: border-box;
   background-color: black;
   .components {
-    width: 100%;
+    width: 99%;
     height: auto;
     .buttons {
       padding: 10px;
