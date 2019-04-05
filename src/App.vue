@@ -66,7 +66,7 @@ export default {
 
 <style lang="less">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   max-width: 1200px;
   height: auto;
   margin: 0 auto;
