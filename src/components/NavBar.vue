@@ -29,7 +29,7 @@ export default {
     height: 45px;
     margin-right: 40%;
     margin-bottom: 20px;
-    border: 1px solid grey;
+    border: 1px solid black;
     color: white;
     font-family: "Courier New", Courier, monospace;
     font-size: 1.2rem;
