@@ -79,7 +79,7 @@ export default {
   }
   .sort-button {
     font-family: "Courier New", Courier, monospace;
-    background-color: #00ced1;
+    background-color: darkgoldenrod;
     width: 15%;
     height: 30px;
     margin-top: 0;
@@ -90,7 +90,7 @@ export default {
     font-weight: bold;
     &:hover {
       background-color: white;
-      color: #00ced1;
+      color: darkslategray;
     }
   }
   .link {
