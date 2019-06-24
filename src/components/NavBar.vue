@@ -42,7 +42,7 @@ export default {
     box-sizing: border-box;
     &:hover {
       background-color: white;
-      color: #00ced1;
+      color: white;
     }
   }
   h1 {
