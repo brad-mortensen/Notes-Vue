@@ -37,9 +37,9 @@ export default {
     LoginModal,
     RegisterModal
   },
-  beforeCreate() {
-    localStorage.removeItem("USER_DATA");
-  },
+  // beforeCreate() {
+  //   localStorage.removeItem("USER_DATA");
+  // },
   created() {
     const token = localStorage.getItem("USER_DATA");
     token ? (this.loggedIn = true) : (this.loggedIn = false);
