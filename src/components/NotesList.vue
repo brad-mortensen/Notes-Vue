@@ -54,7 +54,7 @@ export default {
 
 <style lang="less" scoped>
 .notes-container {
-  border-left: 1px solid darkorange;
+  border-left: 1px solid black;
   display: flex;
   flex-flow: row wrap;
   width: 100%;
@@ -62,6 +62,7 @@ export default {
   padding-top: 20px;
   padding-bottom: 20px;
   box-sizing: border-box;
+  background-color: indianred;
   .holder {
     width: 100%;
     display: flex;
