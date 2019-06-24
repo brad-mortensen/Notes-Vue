@@ -74,7 +74,7 @@ export default {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: #8F2D56;
+  background-color: cadetblue;
   .components {
     width: 99%;
     height: auto;
@@ -104,8 +104,8 @@ export default {
     }
     .outer-container {
       height: 900px;
-      background-color: #35edac;
-      border-left: 1px solid grey;
+      background-color: indianred;
+      border-left: 1px solid black;
     }
   }
 }

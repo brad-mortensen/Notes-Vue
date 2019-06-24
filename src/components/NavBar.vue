@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <h1>Notes</h1>
+    <h1>Vue Notes</h1>
     <router-link :to="{ name: 'notes'}" class="nav-links">View Notes</router-link>
     <router-link :to="{ name: 'add'}" class="nav-links">+ New Note</router-link>
   </div>
@@ -24,7 +24,7 @@ export default {
   flex-flow: column wrap;
   padding: 0px 1%;
   .nav-links {
-    background-color: #35EDAC;
+    background-color: darkgoldenrod;
     width: 30%;
     height: 45px;
     margin-right: 40%;
@@ -41,14 +41,15 @@ export default {
     align-items: center;
     box-sizing: border-box;
     &:hover {
-      background-color: red;
+      background-color: white;
       color: #00ced1;
     }
   }
   h1 {
     font-size: 2.4rem;
     font-weight: bold;
-    width: 60%;
+    width: 100%;
+    text-align: center;
   }
 }
 </style>
