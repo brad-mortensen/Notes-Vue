@@ -70,7 +70,7 @@ export default {
   max-width: 1200px;
   height: auto;
   margin: 0 auto;
-  border: 1px solid grey;
+  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;

@@ -82,7 +82,7 @@ export default {
     height: 30px;
     margin-top: 0;
     margin-right: 30%;
-    border: 1px solid grey;
+    border: 1px solid black;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;

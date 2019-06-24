@@ -17,7 +17,7 @@ export default {
 <style lang="less" scoped>
 .note {
   color: black;
-  border: 1px solid grey;
+  border: 1px solid black;
   width: 30%;
   height: 200px;
   margin-top: 20px;
