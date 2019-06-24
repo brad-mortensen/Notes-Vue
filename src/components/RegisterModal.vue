@@ -89,7 +89,7 @@ export default {
       cursor: pointer;
     }
     .register {
-      background-color: #00ced1;
+      background-color: cadetblue;
     }
   }
 }

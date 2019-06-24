@@ -86,6 +86,7 @@ export default {
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: 0;
+    font-size: 1.2rem;
   }
   .body {
     margin-bottom: 20px;
@@ -95,6 +96,7 @@ export default {
     box-sizing: border-box;
     border-radius: 3px;
     border: 1px solid black;
+    font-size: 1.2rem;
   }
 }
 </style>

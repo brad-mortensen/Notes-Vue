@@ -87,7 +87,7 @@ export default {
       cursor: pointer;
     }
     .login {
-      background-color: #00ced1;
+      background-color: cadetblue;
     }
   }
 }
