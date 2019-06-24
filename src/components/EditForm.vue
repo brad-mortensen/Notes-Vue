@@ -47,7 +47,7 @@ export default {
 <style lang="less" scoped>
 .form {
   box-sizing: border-box;
-  background-color: whitesmoke;
+  background-color: indianred;
   border-left: 1px solid black;
   width: 100%;
   height: auto;
@@ -63,7 +63,7 @@ export default {
   }
   .save {
     font-family: "Courier New", Courier, monospace;
-    background-color: #00ced1;
+    background-color: goldenrod;
     width: 30%;
     height: 45px;
     margin-top: 0;
@@ -74,7 +74,7 @@ export default {
     font-weight: bold;
     &:hover {
       background-color: white;
-      color: #00ced1;
+      color: cadetblue;
     }
   }
   .title {
