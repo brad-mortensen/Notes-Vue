@@ -85,6 +85,7 @@ export default {
       justify-content: flex-end;
       background-color: darkslategray;
       border-left: 1px solid black;
+      border-bottom: 1px solid black;
       a {
         height: auto;
         padding: 3px;
