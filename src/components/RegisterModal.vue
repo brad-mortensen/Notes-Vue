@@ -36,6 +36,7 @@ export default {
           this.username = "";
           this.password = "";
           this.toggleRegistering();
+          console.log('deregistering')
           this.$router.push("/");
         })
         .catch(err => {
