@@ -32,13 +32,10 @@ export default {
     rows() {
       return this.notes.length
     },
-    currentNotes () {
-
-    },
     pageNumbers () {
       const pageNums = [];
       for (let i = 1; i <= Math.ceil(this.notes.length / this.notesPerPage); i++) {
-      pageNumbers.push(i);
+      pageNumbers.push(i)};
       return pageNums;
     }
   },
@@ -68,7 +65,7 @@ export default {
       );
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
