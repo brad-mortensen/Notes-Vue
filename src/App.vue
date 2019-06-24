@@ -80,6 +80,7 @@ export default {
     height: auto;
     .buttons {
       padding: 10px;
+      padding-right: 25px;
       display: flex;
       justify-content: flex-end;
       background-color: darkslategray;
