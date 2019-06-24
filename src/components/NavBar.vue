@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <h1>Lambda Notes</h1>
+    <h1>Notes</h1>
     <router-link :to="{ name: 'notes'}" class="nav-links">View Notes</router-link>
     <router-link :to="{ name: 'add'}" class="nav-links">+ New Note</router-link>
   </div>
@@ -41,7 +41,7 @@ export default {
     align-items: center;
     box-sizing: border-box;
     &:hover {
-      background-color: white;
+      background-color: red;
       color: #00ced1;
     }
   }

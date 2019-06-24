@@ -74,7 +74,7 @@ export default {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: black;
+  background-color: #8F2D56;
   .components {
     width: 99%;
     height: auto;
