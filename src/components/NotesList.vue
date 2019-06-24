@@ -78,7 +78,7 @@ export default {
   }
   .sort-button {
     font-family: "Courier New", Courier, monospace;
-    background-color: darkgoldenrod;
+    background-color: goldenrod;
     width: 15%;
     height: 30px;
     margin-top: 0;

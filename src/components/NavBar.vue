@@ -24,7 +24,7 @@ export default {
   flex-flow: column wrap;
   padding: 0px 1%;
   .nav-links {
-    background-color: darkgoldenrod;
+    background-color: goldenrod;
     width: 30%;
     height: 45px;
     margin-right: 40%;
