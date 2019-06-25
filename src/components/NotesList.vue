@@ -4,7 +4,7 @@
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
     <div class="pages">
-      <p v-on:click="changePage" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}
+      <p v-on:click="changePage(this)" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}
       </p>
     </div>
     <note v-for="(note) in newNotes" :key="note.id" :note="note"></note>
@@ -59,8 +59,8 @@ export default {
         a.title < b.title ? 1 : b.title < a.title ? -1 : 0
       );
     },
-    changePage: function(e) {
-      console.log(` target:${e.target.id}`)
+    changePage: function(p) {
+      console.log(` funct called with:${p}`)
       // this.currentPage = e.target.className;
     }
   }
@@ -94,7 +94,7 @@ export default {
   .sort-button {
     font-family: "Courier New", Courier, monospace;
     background-color: goldenrod;
-    max-width: 100px;
+    max-width: 120px;
     height: 30px;
     margin-top: 0;
     margin-right: 30%;
