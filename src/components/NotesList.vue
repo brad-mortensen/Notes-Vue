@@ -1,9 +1,9 @@
 <template>
   <div class="notes-container">
     <h2 class="your-notes">Notes:</h2>
-    <li v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}</li>
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
+    <p class="link" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}</p>
     <note v-for="(note) in notes" :key="note.id" :note="note"></note>
     <router-view></router-view>
   </div>
