@@ -1,9 +1,7 @@
 <template>
   <div class="notes-container">
     <h2 class="your-notes">Notes:</h2>
-      <a v-for="num in pageNumbers" v-bind:key="num">
-    {{ num }}
-    </a>
+    <!-- <a v-for="num in pageNumbers" v-bind:key="num">{{ num }}</a> -->
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
     <note v-for="(note) in notes" :key="note.id" :note="note"></note>
@@ -25,7 +23,8 @@ export default {
       sortedAZ: false,
       sortedZA: false,
       currentPage: 1,
-      notesPerPage: 6
+      notesPerPage: 6,
+      pageNumbers: pageNumbers
     };
   },
   computed: {
@@ -36,6 +35,7 @@ export default {
       const pageNums = [];
       for (let i = 1; i <= Math.ceil(this.notes.length / this.notesPerPage); i++) {
       pageNumbers.push(i)};
+      console.log(`pagenums: ${pageNums}`)
       return pageNums;
     }
   },
