@@ -38,7 +38,7 @@ export default {
     axios
       .get(`https://lambda-notes-build.herokuapp.com/api/notes/`)
       .then(res => {
-        this.notes = res.data;
+        this.notes = res.data.slice((this.currentPage * this.notesPerPage)-this.notesPerPage, this.currentPage * this.notesPerPage );
       })
       .catch(err => {
         console.log(err);
@@ -60,7 +60,7 @@ export default {
       );
     },
     changePage: function(e) {
-      console.log(` target:${e.target.value}`)
+      console.log(` target:${e.target.id}`)
       // this.currentPage = e.target.className;
     }
   }
