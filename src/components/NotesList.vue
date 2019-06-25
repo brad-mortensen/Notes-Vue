@@ -3,7 +3,7 @@
     <h2 class="your-notes">Notes:</h2>
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
-    <div>
+    <div class="pages">
       <p v-on:click="changePage" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}
       </p>
     </div>
@@ -94,7 +94,7 @@ export default {
   .sort-button {
     font-family: "Courier New", Courier, monospace;
     background-color: goldenrod;
-    width: 15%;
+    max-width: 100px;
     height: 30px;
     margin-top: 0;
     margin-right: 30%;
@@ -107,9 +107,14 @@ export default {
       color: darkslategray;
     }
   }
-  .link {
-    color: black;
-    text-decoration: none;
+  .pages {
+    display: flex;
+    flex-flow: row;
+    width: 15%;
+    justify-content: space-around;
+    .p {
+      font-size: 1.2rem;
+    }
   }
 }
 </style>
