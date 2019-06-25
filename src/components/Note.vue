@@ -22,7 +22,7 @@ export default {
   height: 200px;
   margin-top: 20px;
   background-color: #f7f581;
-  overflow: hidden;
+  overflow: auto;
   padding: 10px 0;
   text-decoration: none;
   box-sizing: border-box;
