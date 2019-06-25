@@ -4,7 +4,7 @@
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
     <div class="pages">
-      <p v-on:click="changePage(this)" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}
+      <p  v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-on:click="changePage(num)" v-bind:key="num">{{ num }}
       </p>
     </div>
     <note v-for="(note) in newNotes" :key="note.id" :note="note"></note>
