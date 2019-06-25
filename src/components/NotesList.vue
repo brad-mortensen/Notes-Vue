@@ -111,7 +111,7 @@ export default {
     flex-flow: row;
     width: 15%;
     justify-content: space-around;
-    .p {
+    p {
       font-size: 1.2rem;
       &:hover {
         cursor: pointer;
