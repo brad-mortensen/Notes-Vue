@@ -23,8 +23,7 @@ export default {
       sortedAZ: false,
       sortedZA: false,
       currentPage: 1,
-      notesPerPage: 6,
-      pageNumbers: pageNumbers
+      notesPerPage: 6
     };
   },
   computed: {
