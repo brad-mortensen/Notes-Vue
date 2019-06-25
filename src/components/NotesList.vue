@@ -4,7 +4,7 @@
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
     <div>
-      <p v-on:click="changePage" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" class={{num}} v-bind:key="num">{{ num }}
+      <p v-on:click="changePage" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}
       </p>
     </div>
     <note v-for="(note) in notes" :key="note.id" :note="note"></note>
@@ -60,8 +60,8 @@ export default {
       );
     },
     changePage: function(e) {
-      console.log(e.target.className)
-      this.currentPage = e.target.className;
+      console.log(` target:${e.target}`)
+      // this.currentPage = e.target.className;
     }
   }
 }
