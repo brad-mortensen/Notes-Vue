@@ -1,7 +1,7 @@
 <template>
   <div class="notes-container">
     <h2 class="your-notes">Notes:</h2>
-    <!-- <a v-for="num in pageNumbers" v-bind:key="num">{{ num }}</a> -->
+    <li v-for="num in pageNumbers" v-bind:key="num">{{ num }}</li>
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
     <note v-for="(note) in notes" :key="note.id" :note="note"></note>
