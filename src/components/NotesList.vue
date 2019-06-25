@@ -60,7 +60,7 @@ export default {
       );
     },
     changePage: function(e) {
-      console.log(` target:${e.target}`)
+      console.log(` target:${e.target.value}`)
       // this.currentPage = e.target.className;
     }
   }
