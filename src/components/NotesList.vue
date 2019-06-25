@@ -3,7 +3,7 @@
     <h2 class="your-notes">Notes:</h2>
     <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
-    <p class="link" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}</p>
+    <p v-on:click="changePage" class="link" v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-bind:key="num">{{ num }}</p>
     <note v-for="(note) in notes" :key="note.id" :note="note"></note>
     <router-view></router-view>
   </div>
@@ -62,6 +62,10 @@ export default {
       this.notes = this.notes.sort((a, b) =>
         a.title < b.title ? 1 : b.title < a.title ? -1 : 0
       );
+    },
+    changePage: function(e) {
+      console.log(e.target)
+      this.currentPage = e.target.value;
     }
   }
 }
