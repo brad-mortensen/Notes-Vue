@@ -113,6 +113,9 @@ export default {
     justify-content: space-around;
     .p {
       font-size: 1.2rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
