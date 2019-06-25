@@ -59,9 +59,8 @@ export default {
         a.title < b.title ? 1 : b.title < a.title ? -1 : 0
       );
     },
-    changePage: function(p) {
-      console.log(` funct called with:${p}`)
-      // this.currentPage = e.target.className;
+    changePage: function(pg) {
+      this.currentPage = pg;
     }
   }
 }
