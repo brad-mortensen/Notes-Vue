@@ -58,7 +58,7 @@ export default {
   .login-modal {
     width: 60%;
     height: 200px;
-    border: 1px solid black;
+    border: 1px solid grey;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -80,14 +80,14 @@ export default {
       width: 25%;
       height: 30px;
       margin-top: 0;
-      border: 1px solid black;
+      border: 1px solid grey;
       color: white;
       font-size: 1.2rem;
       font-weight: bold;
       cursor: pointer;
     }
     .login {
-      background-color: cadetblue;
+      background-color: #00ced1;
     }
   }
 }

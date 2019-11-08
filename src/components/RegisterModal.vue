@@ -36,7 +36,6 @@ export default {
           this.username = "";
           this.password = "";
           this.toggleRegistering();
-          console.log('deregistering')
           this.$router.push("/");
         })
         .catch(err => {
@@ -89,7 +88,7 @@ export default {
       cursor: pointer;
     }
     .register {
-      background-color: cadetblue;
+      background-color: #00ced1;
     }
   }
 }

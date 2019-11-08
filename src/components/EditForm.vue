@@ -47,8 +47,8 @@ export default {
 <style lang="less" scoped>
 .form {
   box-sizing: border-box;
-  background-color: indianred;
-  border-left: 1px solid black;
+  background-color: whitesmoke;
+  border-left: 1px solid grey;
   width: 100%;
   height: auto;
   display: flex;
@@ -63,18 +63,18 @@ export default {
   }
   .save {
     font-family: "Courier New", Courier, monospace;
-    background-color: goldenrod;
+    background-color: #00ced1;
     width: 30%;
     height: 45px;
     margin-top: 0;
     margin-right: 40%;
-    border: 1px solid black;
+    border: 1px solid grey;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     &:hover {
       background-color: white;
-      color: cadetblue;
+      color: #00ced1;
     }
   }
   .title {
@@ -83,10 +83,9 @@ export default {
     padding: 15px;
     box-sizing: border-box;
     margin-bottom: 20px;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-radius: 3px;
     box-shadow: 0;
-    font-size: 1.2rem;
   }
   .body {
     margin-bottom: 20px;
@@ -95,8 +94,7 @@ export default {
     padding: 15px;
     box-sizing: border-box;
     border-radius: 3px;
-    border: 1px solid black;
-    font-size: 1.2rem;
+    border: 1px solid grey;
   }
 }
 </style>

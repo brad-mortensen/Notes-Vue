@@ -30,7 +30,7 @@ export default {
   .delete-modal {
     width: 30%;
     height: 150px;
-    border: 1px solid black;
+    border: 1px solid grey;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -48,7 +48,7 @@ export default {
     width: 30%;
     height: 45px;
     margin-top: 0;
-    border: 1px solid black;
+    border: 1px solid grey;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;

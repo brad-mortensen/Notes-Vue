@@ -60,8 +60,8 @@ export default {
 <style lang="less" scoped>
 .single-container {
   box-sizing: border-box;
-  background-color: indianred;
-  border-left: 1px solid black;
+  background-color: lightseagreen;
+  border-left: 1px solid orangered;
   width: 100%;
   height: 750px;
   padding: 20px;
