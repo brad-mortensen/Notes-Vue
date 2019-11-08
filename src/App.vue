@@ -37,9 +37,9 @@ export default {
     LoginModal,
     RegisterModal
   },
-  beforeCreate() {
-    localStorage.removeItem("USER_DATA");
-  },
+  // beforeCreate() {
+  //   localStorage.removeItem("USER_DATA");
+  // },
   created() {
     const token = localStorage.getItem("USER_DATA");
     token ? (this.loggedIn = true) : (this.loggedIn = false);
@@ -70,20 +70,21 @@ export default {
   max-width: 1200px;
   height: auto;
   margin: 0 auto;
-  border: 1px solid grey;
+  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: #8F2D56;
+  background-color: cadetblue;
   .components {
     width: 99%;
     height: auto;
     .buttons {
       padding: 10px;
+      padding-right: 25px;
       display: flex;
       justify-content: flex-end;
       background-color: darkslategray;
-      border-left: 1px solid black;
+      border-bottom: 1px solid black;
       a {
         height: auto;
         padding: 3px;
@@ -104,8 +105,8 @@ export default {
     }
     .outer-container {
       height: 900px;
-      background-color: #35edac;
-      border-left: 1px solid grey;
+      background-color: indianred;
+      border-left: 1px solid black;
     }
   }
 }

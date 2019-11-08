@@ -17,12 +17,12 @@ export default {
 <style lang="less" scoped>
 .note {
   color: black;
-  border: 1px solid grey;
+  border: 1px solid black;
   width: 30%;
   height: 200px;
   margin-top: 20px;
   background-color: #f7f581;
-  overflow: hidden;
+  overflow: auto;
   padding: 10px 0;
   text-decoration: none;
   box-sizing: border-box;

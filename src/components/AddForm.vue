@@ -1,8 +1,8 @@
 <template>
   <form v-on:submit="handleSubmit" class="form">
     <h3 class="add-header">Create New Note:</h3>
-    <input v-model="note.title" class="title" placeholder="Note Title">
-    <textarea v-model="note.textBody" class="body" placeholder="Note Content"/>
+    <input v-model="note.title" class="title" placeholder="\Title">
+    <textarea v-model="note.textBody" class="body" placeholder="Content"/>
     <button v-on:click="handleSubmit" class="save">Save</button>
   </form>
 </template>
@@ -45,7 +45,7 @@ export default {
 .form {
   box-sizing: border-box;
   background-color: whitesmoke;
-  border-left: 1px solid grey;
+  border-left: 1px solid black;
   width: 100%;
   height: auto;
   display: flex;
@@ -65,7 +65,7 @@ export default {
     height: 45px;
     margin-top: 0;
     margin-right: 40%;
-    border: 1px solid grey;
+    border: 1px solid black;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
@@ -80,7 +80,7 @@ export default {
     padding: 15px;
     box-sizing: border-box;
     margin-bottom: 20px;
-    border: 1px solid grey;
+    border: 1px solid black;
     border-radius: 3px;
     box-shadow: 0;
   }
@@ -91,7 +91,7 @@ export default {
     padding: 15px;
     box-sizing: border-box;
     border-radius: 3px;
-    border: 1px solid grey;
+    border: 1px solid black;
   }
 }
 </style>
