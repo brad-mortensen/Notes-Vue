@@ -37,7 +37,7 @@ export default {
           this.$router.push("/notes");
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     }
   }
