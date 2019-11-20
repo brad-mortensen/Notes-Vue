@@ -1,8 +1,8 @@
 <template>
   <form v-on:submit="handleSubmit" class="form">
     <h3 class="add-header">Create New Note:</h3>
-    <input v-model="note.title" class="title" placeholder="\Title">
-    <textarea v-model="note.textBody" class="body" placeholder="Content"/>
+    <input v-model="note.title" class="title" placeholder="\Title" />
+    <textarea v-model="note.textBody" class="body" placeholder="Content" />
     <button v-on:click="handleSubmit" class="save">Save</button>
   </form>
 </template>
@@ -22,11 +22,12 @@ export default {
   methods: {
     handleSubmit: function(e) {
       e.preventDefault();
+      const data = {
+        title: this.note.title,
+        textBody: this.note.textBody
+      };
       axios
-        .post(`https://lambda-notes-build.herokuapp.com/api/notes/`, {
-          title: this.note.title,
-          textBody: this.note.textBody
-        })
+        .post(`https://lambda-notes-build.herokuapp.com/api/notes/`, data)
         .then(res => {
           console.log(res.status);
           this.note.title = "";
