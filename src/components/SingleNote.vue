@@ -36,7 +36,7 @@ export default {
         this.note = res.data;
       })
       .catch(err => {
-        console.log(err);
+        console.error(err);
       });
   },
   methods: {
@@ -51,7 +51,7 @@ export default {
           console.log(res.status);
           this.$router.push("/notes");
         })
-        .catch(err => console.log(err));
+        .catch(err => console.error(err));
     }
   }
 };

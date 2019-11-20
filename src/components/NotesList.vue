@@ -41,7 +41,7 @@ export default {
         this.notes = res.data;
       })
       .catch(err => {
-        console.log(err);
+        console.error(err);
       });
   },
   methods: {
