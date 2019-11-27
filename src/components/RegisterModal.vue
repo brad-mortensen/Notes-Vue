@@ -4,7 +4,7 @@
     <div class="register-modal">
       <h3>Register</h3>
       <input v-model="username" name="username" placeholder="username...">
-      <input v-model="password" name="password" type="password" placeholder="password...">
+      <input v-model="password" name="password" type="password" placeholder="Enter password...">
       <button @click="register" class="register">register</button>
       <button @click="toggleRegistering">Cancel</button>
     </div>
