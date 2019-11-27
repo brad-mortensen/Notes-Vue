@@ -1,8 +1,8 @@
 <template>
   <div class="notes-container">
     <h2 class="your-notes">Notes:</h2>
-    <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort A-Z</button>
-    <button v-else @click="sortNotesZA" class="sort-button">Sort Z-A</button>
+    <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort AtoZ</button>
+    <button v-else @click="sortNotesZA" class="sort-button">Sort ZtoA</button>
     <div class="pages">
       <p  v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-on:click="changePage(num)" v-bind:key="num">{{ num }}
       </p>
