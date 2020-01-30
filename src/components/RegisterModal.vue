@@ -1,10 +1,14 @@
-
 <template>
   <div class="register-container">
     <div class="register-modal">
       <h3>Register</h3>
-      <input v-model="username" name="username" placeholder="username...">
-      <input v-model="password" name="password" type="password" placeholder="Enter password...">
+      <input v-model="username" name="username" placeholder="username..." />
+      <input
+        v-model="password"
+        name="password"
+        type="password"
+        placeholder="Enter password..."
+      />
       <button @click="register" class="register">register</button>
       <button @click="toggleRegistering">Cancel</button>
     </div>
@@ -25,7 +29,7 @@ export default {
     };
   },
   methods: {
-    register: function() {
+    register: () => {
       axios
         .post(`https://lambda-notes-build.herokuapp.com/api/register/`, {
           username: this.username,
@@ -36,7 +40,7 @@ export default {
           this.username = "";
           this.password = "";
           this.toggleRegistering();
-          console.log('deregistering')
+          console.log("deregistering");
           this.$router.push("/");
         })
         .catch(err => {

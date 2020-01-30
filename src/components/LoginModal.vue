@@ -23,7 +23,7 @@ export default {
     };
   },
   methods: {
-    login: function() {
+    login: () => {
       axios
         .post(`https://lambda-notes-build.herokuapp.com/api/login/`, {
           username: this.username,

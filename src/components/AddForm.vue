@@ -20,7 +20,7 @@ export default {
     };
   },
   methods: {
-    handleSubmit: function(e) {
+    handleSubmit: e => {
       e.preventDefault();
       const data = {
         title: this.note.title,

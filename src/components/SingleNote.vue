@@ -3,14 +3,26 @@
     <div class="button-container">
       <router-link
         exact
-        :to="{name:'edit', params:{id: this.$route.params.id, title: note.title, textBody: note.textBody}}"
-      >Edit</router-link>
+        :to="{
+          name: 'edit',
+          params: {
+            id: this.$route.params.id,
+            title: note.title,
+            textBody: note.textBody
+          }
+        }"
+        >Edit</router-link
+      >
       <a class="delete-button" @click="toggleDelete" to exact>Delete</a>
     </div>
-    <h2>{{note.title}}</h2>
-    <p>{{note.textBody}}</p>
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.textBody }}</p>
     <router-view></router-view>
-    <deleteModal v-if="deleting" :onClick="toggleDelete" :deleter="handleDelete"></deleteModal>
+    <deleteModal
+      v-if="deleting"
+      :onClick="toggleDelete"
+      :deleter="handleDelete"
+    ></deleteModal>
   </div>
 </template>
 
@@ -40,10 +52,10 @@ export default {
       });
   },
   methods: {
-    toggleDelete: function() {
+    toggleDelete: () => {
       this.deleting = !this.deleting;
     },
-    handleDelete: function() {
+    handleDelete: () => {
       const id = this.$route.params.id;
       axios
         .delete(`https://lambda-notes-build.herokuapp.com/api/notes/${id}`)

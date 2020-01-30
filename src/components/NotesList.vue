@@ -1,13 +1,20 @@
 <template>
   <div class="notes-container">
     <h2 class="your-notes">Notes:</h2>
-    <button v-if="sortedAZ===false" @click="sortNotesAZ" class="sort-button">Sort AtoZ</button>
+    <button v-if="sortedAZ === false" @click="sortNotesAZ" class="sort-button">
+      Sort AtoZ
+    </button>
     <button v-else @click="sortNotesZA" class="sort-button">Sort ZtoA</button>
     <div class="pages">
-      <p  v-for="num in Math.ceil(this.notes.length / this.notesPerPage)" v-on:click="changePage(num)" v-bind:key="num">{{ num }}
+      <p
+        v-for="num in Math.ceil(this.notes.length / this.notesPerPage)"
+        v-on:click="changePage(num)"
+        v-bind:key="num"
+      >
+        {{ num }}
       </p>
     </div>
-    <note v-for="(note) in newNotes" :key="note.id" :note="note"></note>
+    <note v-for="note in newNotes" :key="note.id" :note="note"></note>
     <router-view></router-view>
   </div>
 </template>
@@ -30,8 +37,11 @@ export default {
     };
   },
   computed: {
-    newNotes: function() {
-      return this.notes.slice((this.currentPage * this.notesPerPage)-this.notesPerPage, this.currentPage * this.notesPerPage );
+    newNotes: () => {
+      return this.notes.slice(
+        this.currentPage * this.notesPerPage - this.notesPerPage,
+        this.currentPage * this.notesPerPage
+      );
     }
   },
   created() {
@@ -45,14 +55,14 @@ export default {
       });
   },
   methods: {
-    sortNotesAZ: function() {
+    sortNotesAZ: () => {
       this.sortedAZ = true;
       this.sortedZA = false;
       this.notes = this.notes.sort((a, b) =>
         a.title > b.title ? 1 : b.title > a.title ? -1 : 0
       );
     },
-    sortNotesZA: function() {
+    sortNotesZA: () => {
       this.sortedAZ = false;
       this.sortedZA = true;
       this.notes = this.notes.sort((a, b) =>
@@ -63,7 +73,7 @@ export default {
       this.currentPage = pg;
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

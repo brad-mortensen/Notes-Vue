@@ -1,16 +1,19 @@
 <template>
   <div class="app" id="app">
-    <NavBar/>
+    <NavBar />
     <div class="components">
       <div class="buttons">
-        <a @click="toggleLogin" v-if="loggedIn===false">Login</a>
-        <a @click="toggleRegistering" v-if="loggedIn===false">Register</a>
+        <a @click="toggleLogin" v-if="loggedIn === false">Login</a>
+        <a @click="toggleRegistering" v-if="loggedIn === false">Register</a>
         <a @click="handleLogout" v-if="loggedIn">Logout</a>
       </div>
-      <div v-if="loggedIn===false" class="outer-container"></div>
+      <div v-if="loggedIn === false" class="outer-container"></div>
       <login-modal :toggleLogin="toggleLogin" v-if="loggingIn"></login-modal>
-      <registerModal :toggleRegistering="toggleRegistering" v-if="registering"></registerModal>
-      <router-view v-if="loggedIn"/>
+      <registerModal
+        :toggleRegistering="toggleRegistering"
+        v-if="registering"
+      ></registerModal>
+      <router-view v-if="loggedIn" />
     </div>
   </div>
 </template>
@@ -49,13 +52,13 @@ export default {
     token ? (this.loggedIn = true) : (this.loggedIn = false);
   },
   methods: {
-    toggleRegistering: function() {
+    toggleRegistering: () => {
       this.registering = !this.registering;
     },
-    toggleLogin: function() {
+    toggleLogin: () => {
       this.loggingIn = !this.loggingIn;
     },
-    handleLogout: function() {
+    handleLogout: () => {
       localStorage.removeItem("USER_DATA");
       this.loggedIn = false;
       this.$router.push("/");
